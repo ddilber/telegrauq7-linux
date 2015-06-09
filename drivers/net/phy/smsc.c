@@ -47,6 +47,8 @@ static int smsc_phy_config_init(struct phy_device *phydev)
 	if (rc < 0)
 		return rc;
 
+    printk("SMSC-spec: %08X\n", rc);
+
 	/* If the SMSC PHY is in power down mode, then set it
 	 * in all capable mode before using it.
 	 */
@@ -70,6 +72,8 @@ static int smsc_phy_config_init(struct phy_device *phydev)
 	rc = phy_read(phydev, MII_LAN83C185_CTRL_STATUS);
 	if (rc < 0)
 		return rc;
+
+    printk("SMSC-stat: %08X\n", rc);
 
 	/* Enable energy detect mode for this SMSC Transceivers */
 	rc = phy_write(phydev, MII_LAN83C185_CTRL_STATUS,

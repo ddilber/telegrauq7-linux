@@ -81,6 +81,7 @@
 			resets = <&src 0>, <&src 3>;
 			reset-names = "gpu3d", "gpu2d";
 			pu-supply = <&reg_pu>;
+			status = "disabled";
 		};
 
 		ocram: sram@00900000 {
@@ -125,7 +126,7 @@
 		aips1: aips-bus@02000000 {
 			vpu@02040000 {
 				iramsize = <0>;
-				status = "okay";
+				status = "disabled";
 			};
 
 			iomuxc: iomuxc@020e0000 {
